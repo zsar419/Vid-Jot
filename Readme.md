@@ -1,3 +1,5 @@
+# Vid-Jot
+
 Initialization - creating package.json file
 - Manifest of app
 - Has app name, version, description, author etc.
@@ -84,3 +86,21 @@ BcryptJS:
 - Installing passport strategies:
     - Local strategy (store to local DB):
         - npm install --save passport-local
+
+
+## Deployment procedure ##
+Mlab DB: used for prod deployments
+MongoDB: used for local deployments
+
+Heroku deployment procedure:
+- git init
+- git add .
+- git commit -am <message>
+
+- Heroku setup:
+    - heroku login
+    - heroku create
+    - heroku git:remote -a <repo name obtained from heroku create>
+    - git push heroku master
+
+- Next: Link and deploy to github which auto-builds (continous integration)
