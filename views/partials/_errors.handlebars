@@ -1,0 +1,8 @@
+{{#if error}} <!-- Passport error -->
+    <div class="alert alert-danger">{{error}}</div> 
+{{/if}}
+
+{{#each errors}}   <!-- Looping in handlebars -->
+    <div class="alert alert-danger">{{text}}</div> <!-- errors.text -->
+{{else}}    <!-- If no errors -->
+{{/each}}
