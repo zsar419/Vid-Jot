@@ -1,34 +1,14 @@
 # Vid-Jot
+### https://secret-escarpment-60815.herokuapp.com ###
 
-Initialization - creating package.json file
-- Manifest of app
-- Has app name, version, description, author etc.
-- File which states dependencies
-- index.js is entrypoint (default), we changed this to app.js
-
-Global modules directory:
-- npm root -g
-
-package.json
-- Can declare scripts here which autorun if app in prod
-- e.g.
-    "scripts": {
-        "start": "node app.js"
-    },
-    - Enables command: npm start
-        - Heroku auto-runs this upon deployment to start app
-
-Running node server:
-- node app.js
-    - where 'app.js' is the entrypoint declared in the package.json
-
-Nodemon:
-- Watching server using nodemon
-- npm install -g nodemon
-    - Global installation
-- Watching files for changes:
-    - nodemon
-
+## Application ##
+A simple To-Do type of web app running on NodeJS
+- Features:
+    - ExpressJS - routing and API decleration
+    - Handlebars - serversided views
+    - Mongoose/MongoDB - backend database
+    - Passport - authentication
+    - Bcrypt - password hashing for secure storage
 
 ## Libraries used ##
 ExpressJS:
@@ -89,8 +69,8 @@ BcryptJS:
 
 
 ## Deployment procedure ##
-Mlab DB: used for prod deployments
-MongoDB: used for local deployments
+- Mlab DB: used for prod deployments
+- MongoDB: used for local deployments
 
 Heroku deployment procedure:
 - git init
@@ -102,5 +82,3 @@ Heroku deployment procedure:
     - heroku create
     - heroku git:remote -a <repo name obtained from heroku create>
     - git push heroku master
-
-- Next: Link and deploy to github which auto-builds (continous integration)
