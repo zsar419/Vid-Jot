@@ -92,6 +92,11 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 
+// Article route
+app.get('/article', (req, res) => {
+    res.render('article');
+});
+
 
 /** USE DECLARED ROUTES (after middleware) **/
 app.use('/ideas', ideas);   // Anything which uses ideas, pertains to the ideas routes file
