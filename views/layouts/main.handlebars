@@ -8,6 +8,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
         crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Richpins meta tags -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Video idea jotting website is now LIVE!" />
+    <meta property="og:description" content="A place where you can freely jot down your video ideas before posting to youtube!" />
+    <meta property="og:url" content="https://secret-escarpment-60815.herokuapp.com/" />
+
     <title>VidJot</title>
 </head>
 
@@ -18,6 +25,24 @@
         {{> _errors }}
         {{{ body }}}
     </div>
+    <script>
+        console.log('WORKING');
+
+        // Registering Service Worker
+        if('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                .then((registration) => {
+                    // SW registration SUCCESSFUL
+                    console.log(`Service worker registered with scope: ${registration.scope}`);
+                }, (err) => {
+                    // SW registration FAILED
+                    console.log(`Service worker registration failed: ${err}`);
+                });
+            });
+        }
+    </script>
+       
     <!-- Output which ever view is being rendered from express -->
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
